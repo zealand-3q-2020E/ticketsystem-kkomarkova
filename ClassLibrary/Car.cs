@@ -9,10 +9,12 @@ namespace ClassLibrary
     public class Car : Vehicle
     {
         //Constructor of Car class
-       public Car(string plate, DateTime date) : base(plate, date)
+       public Car(string plate, DateTime date, bool Brobizz, int Discount) : base(plate, date, Brobizz, Discount)
         {
             _datetime = date;
             _licensePlate = plate;
+            _brobbiz = Brobizz;
+            _Discount = Discount;
         }
         /// <summary>
         /// This is property Licenseplate
@@ -26,9 +28,16 @@ namespace ClassLibrary
         /// This is method Price, which returns value 240
         /// </summary>
         /// <returns></returns>
+        private int price = 240;
         public override double Price()
         {
-            return 240;
+            if (Brobizz == true)
+                price = price - (price * 5 / 100);
+            else
+            {
+
+            }
+            return price;
         }
         /// <summary>
         /// This is method VehicleType, which returns type of vehicle "car"

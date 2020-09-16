@@ -10,10 +10,12 @@ namespace ClassLibrary
     public class MC : Vehicle
     {
         //Constructor of MC class 
-       public MC(string plate, DateTime date) : base(plate, date)
+       public MC(string plate, DateTime date, bool Brobizz, int Discount) : base(plate, date, Brobizz, Discount)
         {
             _datetime = date;
             _licensePlate = plate;
+            _brobbiz = Brobizz;
+            _Discount = Discount;
         }
         /// <summary>
         /// Class MC has Property Licenseplate
@@ -27,9 +29,16 @@ namespace ClassLibrary
         /// This is double method Price, the value returned is fixed at 125 kr
         /// </summary>
         /// <returns></returns>
+        private int price = 125;
         public override double Price()
         {
-            return 125;
+            if (Brobizz == true)
+                price = price - (price*5/100);
+            else
+            {
+
+            }
+            return price;
         }
         /// <summary>
         /// This is  string method Vehicle, the value returned is "MC"

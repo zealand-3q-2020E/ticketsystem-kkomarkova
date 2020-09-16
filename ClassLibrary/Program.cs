@@ -10,7 +10,7 @@ namespace ClassLibrary
         static void Main(string[]args)
         {
             Console.WriteLine("Hello World");
-            MC test = new MC("12345678", new DateTime(1235, 03, 12));
+            MC test = new MC("12345678", new DateTime(1235, 03, 12),true,5);
         }
     }
 }

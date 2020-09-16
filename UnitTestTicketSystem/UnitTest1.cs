@@ -14,8 +14,10 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "ABC-ITR";
             DateTime datetime = new DateTime(2014, 12, 7);
+            bool brobizz = false;
+            int discount = 5;
 
-            var Car = new Car(licenseplate, datetime);
+            var Car = new Car(licenseplate, datetime, brobizz, discount);
             //Act
             double result = Car.Price();
             //Assert
@@ -28,7 +30,9 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "ABC-ITR";
             DateTime datetime = new DateTime(2014, 12, 7);
-            var Car = new Car(licenseplate, datetime);
+            bool brobizz = true;
+            int discount = 5;
+            var Car = new Car(licenseplate, datetime, brobizz, discount);
             //Act
             string result = Car.VehicleType();
             //Assert
@@ -41,7 +45,9 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "ABC-ITR";
             DateTime datetime = new DateTime(2014, 12, 7);
-            var MC = new MC(licenseplate, datetime);
+            bool brobizz = false;
+            int discount = 5;
+            var MC = new MC(licenseplate, datetime, brobizz, discount);
             //Act
             double result = MC.Price();
             //Assert
@@ -54,7 +60,9 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "ABC-ITR";
             DateTime datetime = new DateTime(2014, 12, 7);
-            var MC = new MC(licenseplate, datetime);
+            bool brobizz = true;
+            int discount = 5;
+            var MC = new MC(licenseplate, datetime, brobizz, discount);
             //Act
             string result = MC.VehicleType();
             //Assert
@@ -66,17 +74,51 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "1234567";
             DateTime datetime = new DateTime(2014, 12, 7);
+            bool brobizz = true;
+            int discount = 5;
             //var MC = new MC(licenseplate, datetime);
             //Act
             //string result = MC.VehicleType();
             //Assert
-            try {
-                var MC = new MC(licenseplate, datetime);
-            } 
+            try
+            {
+                var MC = new MC(licenseplate, datetime, brobizz, discount);
+            }
             catch (ArgumentException)
             {
                 Assert.Fail();
             }
+
+        }
+        [TestMethod]
+        public void TestBrobizzDiscountMC()
+
+        {
+            //Arrange
+            string licenseplate = "1234567";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            bool brobizz = true;
+            int discount = 5;
+            var MC = new MC (licenseplate, datetime,brobizz,discount);
+            //Act
+            double result = MC.Price();
+            //Assert
+            Assert.AreEqual(118.5, result, 3);
+        }
+        [TestMethod]
+        public void TestBrobizzDiscountCar()
+        {
+            //Arrange
+            string licenseplate = "1234567";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            bool brobizz = true;
+            int discount = 5;
+            var Car = new Car(licenseplate, datetime, brobizz, discount);
+            //Act
+            double result = Car.Price();
+            //Assert
+            
+            Assert.AreEqual(228, result, 3);
         }
     }
 }
