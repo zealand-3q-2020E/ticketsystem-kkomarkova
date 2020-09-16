@@ -10,9 +10,10 @@ namespace ClassLibrary
     public class MC : Vehicle
     {
         //Constructor of MC class 
-       public MC(string licenseplate, DateTime datetime) : base(licenseplate, datetime)
+       public MC(string plate, DateTime date) : base(plate, date)
         {
-
+            _datetime = date;
+            _licensePlate = plate;
         }
         /// <summary>
         /// Class MC has Property Licenseplate
@@ -38,6 +39,8 @@ namespace ClassLibrary
         {
             return "MC";
         }
+
+        
 
     }
 }

@@ -14,7 +14,7 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "ABC-ITR";
             DateTime datetime = new DateTime(2014, 12, 7);
-            
+
             var Car = new Car(licenseplate, datetime);
             //Act
             double result = Car.Price();
@@ -28,7 +28,7 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "ABC-ITR";
             DateTime datetime = new DateTime(2014, 12, 7);
-            var Car = new Car(licenseplate,datetime);
+            var Car = new Car(licenseplate, datetime);
             //Act
             string result = Car.VehicleType();
             //Assert
@@ -54,7 +54,7 @@ namespace UnitTestTicketSystem
             //Arrange
             string licenseplate = "ABC-ITR";
             DateTime datetime = new DateTime(2014, 12, 7);
-            var MC = new MC(licenseplate,datetime);
+            var MC = new MC(licenseplate, datetime);
             //Act
             string result = MC.VehicleType();
             //Assert

@@ -9,9 +9,10 @@ namespace ClassLibrary
     public class Car : Vehicle
     {
         //Constructor of Car class
-       public Car(string licenseplate, DateTime datetime) : base(licenseplate, datetime)
+       public Car(string plate, DateTime date) : base(plate, date)
         {
-
+            _datetime = date;
+            _licensePlate = plate;
         }
         /// <summary>
         /// This is property Licenseplate

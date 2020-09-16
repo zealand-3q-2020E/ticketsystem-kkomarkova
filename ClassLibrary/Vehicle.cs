@@ -1,32 +1,41 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ClassLibrary
 {
-    public abstract class Vehicle
+    public class Vehicle
     {
+        private string plate;
+        private DateTime date;
+
         //Constructor base class Vehicle
         public Vehicle (string licenseplate, DateTime datetime)
         {
-            LicensePlate = licenseplate;
-            Datetime = datetime;
+            plate = licenseplate;
+            date = datetime;
         }
 
         //Property LicensePlate
-        private string licenseplate;
+       
 
-        public string LicensePlate
+        protected string _licensePlate
+            
         {
-            get { return licenseplate; }
-            set { licenseplate = value; }
+            get { return plate; }
+            set {
+                if (plate.Length > 7)
+                    throw new ArgumentException("The License plate is not in right format, please try it again");
+
+                else plate = value; }
         }
 
         //Property DateTime
-        private DateTime datetime;
+     
 
-        public DateTime Datetime
+        protected DateTime _datetime
         {
-            get { return datetime; }
-            set { datetime = value; }
+            get { return date; }
+            set { date = value; }
         }
 
 
