@@ -60,5 +60,23 @@ namespace UnitTestTicketSystem
             //Assert
             Assert.AreEqual("MC", result);
         }
+        [TestMethod]
+        public void TestLicenseplatelenght()
+        {
+            //Arrange
+            string licenseplate = "1234567";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            //var MC = new MC(licenseplate, datetime);
+            //Act
+            //string result = MC.VehicleType();
+            //Assert
+            try {
+                var MC = new MC(licenseplate, datetime);
+            } 
+            catch (ArgumentException)
+            {
+                Assert.Fail();
+            }
+        }
     }
 }
