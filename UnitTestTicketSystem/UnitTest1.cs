@@ -1,5 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary;
+using System.Runtime.CompilerServices;
+using System;
+
 namespace UnitTestTicketSystem
 {
     [TestClass]
@@ -9,7 +12,10 @@ namespace UnitTestTicketSystem
         public void TestPriceCarmethod()
         {
             //Arrange
-            var Car = new Car();
+            string licenseplate = "ABC-ITR";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            
+            var Car = new Car(licenseplate, datetime);
             //Act
             double result = Car.Price();
             //Assert
@@ -20,7 +26,9 @@ namespace UnitTestTicketSystem
         public void TestVehicleType()
         {
             //Arrange
-            var Car = new Car();
+            string licenseplate = "ABC-ITR";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            var Car = new Car(licenseplate,datetime);
             //Act
             string result = Car.VehicleType();
             //Assert
@@ -31,7 +39,9 @@ namespace UnitTestTicketSystem
         public void TestPriceMCmethod()
         {
             //Arrange
-            var MC = new MC();
+            string licenseplate = "ABC-ITR";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            var MC = new MC(licenseplate, datetime);
             //Act
             double result = MC.Price();
             //Assert
@@ -42,9 +52,11 @@ namespace UnitTestTicketSystem
         public void TestVehicleMCmethod()
         {
             //Arrange
-            var MC = new MC();
+            string licenseplate = "ABC-ITR";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            var MC = new MC(licenseplate,datetime);
             //Act
-            string result = MC.Vehicle();
+            string result = MC.VehicleType();
             //Assert
             Assert.AreEqual("MC", result);
         }
