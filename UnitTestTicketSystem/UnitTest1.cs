@@ -6,7 +6,7 @@ namespace UnitTestTicketSystem
     public class UnitTest1
     {
         [TestMethod]
-        public void TestPricemethod()
+        public void TestPriceCarmethod()
         {
             //Arrange
             var Car = new Car();
@@ -26,6 +26,27 @@ namespace UnitTestTicketSystem
             //Assert
             Assert.AreEqual("Car", result);
 
+        }
+        [TestMethod]
+        public void TestPriceMCmethod()
+        {
+            //Arrange
+            var MC = new MC();
+            //Act
+            double result = MC.Price();
+            //Assert
+            Assert.AreEqual(125, result);
+
+        }
+        [TestMethod]
+        public void TestVehicleMCmethod()
+        {
+            //Arrange
+            var MC = new MC();
+            //Act
+            string result = MC.Vehicle();
+            //Assert
+            Assert.AreEqual("MC", result);
         }
     }
 }
