@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "ClassLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestTicketSystem", "UnitTestTicketSystem\UnitTestTicketSystem.csproj", "{4F81641A-7EBD-4B9C-8E0B-89AA0A7B1DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storebaelstbroen", "Storebaelstbroen\Storebaelstbroen.csproj", "{366AA028-12F9-40BA-BFFE-ACC480FFD40E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreBaeltTicketLibrary", "Storebaelstbroen\StoreBaeltTicketLibrary.csproj", "{366AA028-12F9-40BA-BFFE-ACC480FFD40E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

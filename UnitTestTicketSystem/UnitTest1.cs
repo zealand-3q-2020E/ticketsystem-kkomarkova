@@ -16,8 +16,9 @@ namespace UnitTestTicketSystem
             DateTime datetime = new DateTime(2014, 12, 7);
             bool brobizz = false;
             int discount = 5;
+            bool weekendiscount = false;
 
-            var Car = new Car(licenseplate, datetime, brobizz, discount);
+            var Car = new Car(licenseplate, datetime, brobizz, discount,weekendiscount);
             //Act
             double result = Car.Price();
             //Assert
@@ -32,7 +33,9 @@ namespace UnitTestTicketSystem
             DateTime datetime = new DateTime(2014, 12, 7);
             bool brobizz = true;
             int discount = 5;
-            var Car = new Car(licenseplate, datetime, brobizz, discount);
+            bool weekendiscount = false;
+
+            var Car = new Car(licenseplate, datetime, brobizz, discount, weekendiscount);
             //Act
             string result = Car.VehicleType();
             //Assert
@@ -113,12 +116,31 @@ namespace UnitTestTicketSystem
             DateTime datetime = new DateTime(2014, 12, 7);
             bool brobizz = true;
             int discount = 5;
-            var Car = new Car(licenseplate, datetime, brobizz, discount);
+            bool weekendiscount = false;
+            var Car = new Car(licenseplate, datetime, brobizz, discount, weekendiscount);
             //Act
             double result = Car.Price();
             //Assert
             
             Assert.AreEqual(228, result, 3);
         }
+        [TestMethod]
+        public void TestWeekendDiscountCar()
+        {
+            //Arrange
+            string licenseplate = "1234567";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            bool brobizz = true;
+            int discount = 5;
+            bool weekendiscount = true;
+            var Car = new Car(licenseplate, datetime, brobizz, discount, weekendiscount);
+            //Act
+            double result = Car.Price();
+            //Assert
+
+            Assert.AreEqual(182, result, 3);
+        }
+
     }
+
 }
