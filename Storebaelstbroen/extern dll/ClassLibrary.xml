@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:ClassLibrary.Car">
+            <summary>
+            This is class Car (remember to make it public)
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.Car.price">
+            <summary>
+            This is method Price, which returns value 240 and also if Brobizz is used the discount is calculated
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClassLibrary.Car.VehicleType">
+            <summary>
+            This is method VehicleType, which returns type of vehicle "car"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ClassLibrary.MC">
+            <summary>
+            This is class MC (remember to make it public)
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.MC.price">
+            <summary>
+            This is double method Price, the value returned is fixed at 125 kr and also if Brobizz is used the discount is calculated
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClassLibrary.MC.VehicleType">
+            <summary>
+            This is  string method Vehicle, the value returned is "MC"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ClassLibrary.Vehicle._licensePlate">
+            <summary>
+            Property LicensePlate, if the licenseplate is longer than 7 characters the exception is thrown
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Vehicle._Discount">
+            <summary>
+            Property Discount
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Vehicle._datetime">
+             <summary>
+            Property DateTime
+             </summary>
+        </member>
+        <member name="P:ClassLibrary.Vehicle._brobbiz">
+            <summary>
+            Property Brobizz
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Vehicle.Price">
+            <summary>
+            Methods of base class Price, VehicleType..
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
