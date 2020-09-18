@@ -26,7 +26,7 @@ namespace ClassLibrary
         /// </summary>
         // public DateTime date { get; set; }
         /// <summary>
-        /// This is double method Price, the value returned is fixed at 125 kr
+        /// This is double method Price, the value returned is fixed at 125 kr and also if Brobizz is used the discount is calculated
         /// </summary>
         /// <returns></returns>
         private int price = 125;

@@ -25,7 +25,7 @@ namespace ClassLibrary
         /// </summary>
         //public DateTime date { get; set; }
         /// <summary>
-        /// This is method Price, which returns value 240
+        /// This is method Price, which returns value 240 and also if Brobizz is used the discount is calculated
         /// </summary>
         /// <returns></returns>
         private int price = 240;

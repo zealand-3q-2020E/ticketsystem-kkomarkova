@@ -25,9 +25,9 @@ namespace ClassLibrary
 
         }
 
-        //Property LicensePlate
-       
-
+        /// <summary>
+        /// Property LicensePlate, if the licenseplate is longer than 7 characters the exception is thrown
+        /// </summary>
         protected string _licensePlate
             
         {
@@ -39,7 +39,9 @@ namespace ClassLibrary
                 else plate = value; }
         }
         
-
+        /// <summary>
+        /// Property Discount
+        /// </summary>
         public int _Discount
         {
             get { return Discount; }
@@ -47,25 +49,32 @@ namespace ClassLibrary
         }
 
 
-        //Property DateTime
 
 
+        /// <summary>
+        ///Property DateTime
+        /// </summary>
         protected DateTime _datetime
         {
             get { return date; }
             set { date = value; }
         }
         
-
+        /// <summary>
+        /// Property Brobizz
+        /// </summary>
         protected bool _brobbiz
         {
             get { return Brobizz; }
             set { 
                 Brobizz = value; }
         }
-        
 
-        //Methods of base class
+
+        /// <summary>
+        /// Methods of base class Price, VehicleType..
+        /// </summary>
+        /// <returns></returns>
         public virtual double Price()
         {
             if (Brobizz == true)
