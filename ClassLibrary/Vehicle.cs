@@ -11,17 +11,19 @@ namespace ClassLibrary
         private int Discount;
         private string vehicleName;
         private double price;
+        public bool Oresundbron;
 
 
 
 
         //Constructor base class Vehicle
-        public Vehicle (string licenseplate, DateTime datetime, bool brobizz, int discount)
+        public Vehicle (string licenseplate, DateTime datetime, bool brobizz, int discount, bool oresundbron)
         {
             plate = licenseplate;
             date = datetime;
             Brobizz = brobizz;
             Discount = discount;
+            Oresundbron = oresundbron;
 
         }
 
@@ -90,6 +92,14 @@ namespace ClassLibrary
         {
             return vehicleName;
         }
+        
+
+        public bool _oresundbron
+        {
+            get { return Oresundbron; }
+            set { Oresundbron = value; }
+        }
+
 
         public override string ToString()
         {

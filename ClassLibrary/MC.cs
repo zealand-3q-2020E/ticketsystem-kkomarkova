@@ -10,12 +10,13 @@ namespace ClassLibrary
     public class MC : Vehicle
     {
         //Constructor of MC class 
-       public MC(string plate, DateTime date, bool Brobizz, int Discount) : base(plate, date, Brobizz, Discount)
+       public MC(string plate, DateTime date, bool Brobizz, int Discount, bool Oresundbron) : base(plate, date, Brobizz, Discount, Oresundbron)
         {
             _datetime = date;
             _licensePlate = plate;
             _brobbiz = Brobizz;
             _Discount = Discount;
+            _oresundbron = Oresundbron;
         }
         /// <summary>
         /// Class MC has Property Licenseplate
@@ -32,21 +33,32 @@ namespace ClassLibrary
         private int price = 125;
         public override double Price()
         {
-            if (Brobizz == true)
-                price = price - (price*5/100);
-            else
+            if (Brobizz == true)   
             {
-
+                price = price - (price * 5 / 100);
+            }
+            
+            else if (Brobizz == false && Oresundbron == true)
+            {
+                price = 210;
+            }
+            else if (Brobizz == true && Oresundbron == true)
+            {
+                price = 73;
             }
             return price;
         }
         /// <summary>
-        /// This is  string method Vehicle, the value returned is "MC"
+        /// This is  string method Vehicle, the value returned is "MC", unless the OresundBron discount is true than it returns Oresund MC
         /// </summary>
         /// <returns></returns>
         public override string VehicleType()
         {
-            return "MC";
+            if (Oresundbron == true)
+            {
+                return "Oresund MC";
+            }
+            else return "MC";
         }
 
         

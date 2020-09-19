@@ -17,7 +17,7 @@
         </member>
         <member name="M:ClassLibrary.Car.VehicleType">
             <summary>
-            This is method VehicleType, which returns type of vehicle "car"
+            This is method VehicleType, which returns type of vehicle "car" unless OresundBron discount is true then it returns Oresund Car.
             </summary>
             <returns></returns>
         </member>
@@ -34,7 +34,7 @@
         </member>
         <member name="M:ClassLibrary.MC.VehicleType">
             <summary>
-            This is  string method Vehicle, the value returned is "MC"
+            This is  string method Vehicle, the value returned is "MC", unless the OresundBron discount is true than it returns Oresund MC
             </summary>
             <returns></returns>
         </member>

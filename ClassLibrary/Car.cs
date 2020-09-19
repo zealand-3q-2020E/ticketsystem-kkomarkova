@@ -9,13 +9,14 @@ namespace ClassLibrary
     public class Car : Vehicle
     {
         //Constructor of Car class
-       public Car(string plate, DateTime date, bool Brobizz, int Discount, bool WeekendDiscount) : base(plate, date, Brobizz, Discount)
+       public Car(string plate, DateTime date, bool Brobizz, int Discount, bool WeekendDiscount, bool Oresundbron) : base(plate, date, Brobizz, Discount, Oresundbron)
         {
             _datetime = date;
             _licensePlate = plate;
             _brobbiz = Brobizz;
             _Discount = Discount;
             _weekendDiscount = WeekendDiscount;
+            _oresundbron = Oresundbron;
 
         }
         /// <summary>
@@ -32,42 +33,51 @@ namespace ClassLibrary
         /// <returns></returns>
         private int price = 240;
         private int priceafterweekendiscount = 240 - (240 * 20 / 100);
-        
+        private bool _weekendDiscount;
+
         public override double Price()
         {
-            if (Brobizz == true && WeekendDiscount == false)
+            if (Brobizz == true && WeekendDiscount == false && Oresundbron == false)
                 
             {
                 price = price - (price * 5 / 100);
             }
            
-            else if(Brobizz == false && WeekendDiscount == true)
+            else if(Brobizz == false && WeekendDiscount == true && Oresundbron == false)
             {
                 price = price - (price * 20 / 100);
             }
-            else if(Brobizz ==true && WeekendDiscount == true)
+            else if(Brobizz ==true && WeekendDiscount == true && Oresundbron == false)
             {
                 price = priceafterweekendiscount - (priceafterweekendiscount * 5 / 100);
             }
-            else if (Brobizz ==false && WeekendDiscount == false)
+            
+            else if (Brobizz == false && Oresundbron == true && WeekendDiscount == false )
             {
-                
+                price = 410;
+            }
+            else if (Brobizz == true && Oresundbron == true && WeekendDiscount == false)
+            {
+                price = 161;
             }
             return price;
-            
+
         }
 
         /// <summary>
-        /// This is method VehicleType, which returns type of vehicle "car"
+        /// This is method VehicleType, which returns type of vehicle "car" unless OresundBron discount is true then it returns Oresund Car.
         /// </summary>
         /// <returns></returns>
         public override string VehicleType()
         {
-            return "Car";
+            if (Oresundbron == true)
+            {
+                return "Oresund Car";
+            }
+            else return "Car";
         }
 
-        private bool _weekendDiscount;
-
+       
         public bool WeekendDiscount
         {
             get { return _weekendDiscount; }
