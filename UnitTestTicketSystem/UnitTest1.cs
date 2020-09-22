@@ -169,7 +169,23 @@ namespace UnitTestTicketSystem
 
             Assert.AreEqual(161, result, 3);
         }
+        [TestMethod]
+        public void TestVehicleOresundMC()
+        {
+            //Arrange
+            string licenseplate = "ABC-ITR";
+            DateTime datetime = new DateTime(2014, 12, 7);
+            bool brobizz = true;
+            int discount = 5;
+            bool Oresundbron = true;
+
+            var MC = new MC(licenseplate, datetime, brobizz, discount, Oresundbron);
+            //Act
+            string result = MC.VehicleType();
+            //Assert
+            Assert.AreEqual("Oresund MC", result);
+        }
 
     }
-
+ 
 }
